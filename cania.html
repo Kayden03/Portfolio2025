@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rico Cania — Portfolio</title>
+  <meta name="description" content="Personal portfolio showcasing projects, skills, and contact information." />
+
+  <style>
+    :root{
+      --bg:#0f1724; /* deep navy */
+      --card:#0b1220;
+      --muted:#9aa8bf;
+      --accent:#7c3aed; /* purple accent */
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --max-width:1100px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg) 0%, #08101a 100%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    .container{
+      max-width:var(--max-width);
+      margin:32px auto;
+      padding:24px;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:28px;
+    }
+
+    .brand{
+      display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;
+    }
+    .logo{
+      width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#4f46e5);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;color:white;box-shadow:0 6px 20px rgba(124,58,237,0.18)
+    }
+
+    nav{display:flex;gap:14px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px}
+    nav a:hover{color:var(--accent);background:var(--glass)}
+
+    /* Hero */
+    .hero{
+      display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-bottom:28px;
+    }
+    .hero-card{
+      background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);
+      border-radius:var(--radius);padding:28px;backdrop-filter: blur(6px);
+      box-shadow: 0 6px 30px rgba(2,6,23,0.6);
+    }
+
+    .name{font-size:28px;font-weight:700;margin:0}
+    .role{color:var(--muted);margin:8px 0 18px}
+    .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:10px 14px;border-radius:12px;border:0;cursor:pointer;font-weight:600}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#5b21b6);color:white}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    .avatar{
+      width:100%;height:100%;max-width:320px;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.04)
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* Sections */
+    section{margin-bottom:28px}
+    h2{margin:6px 0 14px;font-size:20px}
+    .card{background:var(--card);border-radius:14px;padding:18px}
+
+    /* Projects grid */
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .project{display:flex;gap:12px;align-items:flex-start;padding:12px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent)}
+    .project img{width:120px;height:80px;object-fit:cover;border-radius:10px}
+    .project h3{margin:0;font-size:16px}
+    .project p{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+    /* Skills */
+    .skills{display:flex;flex-wrap:wrap;gap:10px}
+    .skill{padding:8px 12px;background:var(--glass);border-radius:999px;color:var(--muted);font-weight:600}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
+    form label{display:block;font-size:13px;margin-bottom:6px;color:var(--muted)}
+    input,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    textarea{min-height:120px}
+
+    footer{margin-top:22px;color:var(--muted);text-align:center}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .projects{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+    }
+
+    /* small animations */
+    .fade-up{transform:translateY(8px);opacity:0;animation:fadeUp .6s ease forwards}
+    @keyframes fadeUp{to{transform:none;opacity:1}}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="brand" href="#">
+        <div class="logo">RC</div>
+        <div>
+          <div style="font-weight:700">Rico Cania</div>
+          <div style="font-size:12px;color:var(--muted)">Frontend Developer • Student • Creative</div>
+        </div>
+      </a>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-ghost" href="#">Resume</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-card fade-up">
+          <h1 class="name">Hi — I'm <span style="color:var(--accent)">Rico</span>.</h1>
+          <div class="role">I build simple, useful web experiences and apps. Currently working on LokalMart — a project showcasing handmade products from Negros.</div>
+
+          <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+            <button class="btn btn-primary">Hire me</button>
+            <a class="btn btn-ghost" href="#projects">View projects</a>
+          </div>
+
+          <div style="margin-top:18px;color:var(--muted);font-size:14px">
+            <strong>Location:</strong> Bacolod City, Philippines &nbsp;•&nbsp; <strong>Email:</strong> <a href="mailto:you@example.com" style="color:var(--muted);text-decoration:underline">you@example.com</a>
+          </div>
+
+          <div style="margin-top:18px">
+            <h4 style="margin:0 0 8px">Quick bio</h4>
+            <p style="margin:0;color:var(--muted);font-size:14px">Student and developer passionate about UX and community-driven projects. I enjoy building small tools that help real people.</p>
+          </div>
+        </div>
+
+        <div class="avatar card fade-up" style="padding:6px;display:flex;align-items:center;justify-content:center">
+          <!-- Replace source with your photo -->
+          <img src="123.jpg" alt="Your photo">
+        </div>
+      </section>
+
+      <section id="about" class="card fade-up">
+        <h2>About me</h2>
+        <p style="color:var(--muted);margin-top:6px">I'm a student developer working on projects that connect local artisans to a larger audience. My capstone project, LokalMart, focuses on showcasing handmade products from Negros Occidental and Bacolod City using a mobile app experience.</p>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+          <article class="project card fade-up">
+            <img src="https://via.placeholder.com/320x180.png?text=Project+1" alt="Project 1">
+            <div>
+              <h3>LokalMart (Capstone)</h3>
+              <p>Mobile app to showcase handmade products by local artisans, with search, filter, and seller profiles. Built with Flutter and Firebase. (Placeholder)</p>
+            </div>
+          </article>
+
+          <article class="project card fade-up">
+            <img src="https://via.placeholder.com/320x180.png?text=Project+2" alt="Project 2">
+            <div>
+              <h3>POS System (C#)</h3>
+              <p>A basic point-of-sale app created using C# Windows Forms for classroom use. Features: product listing, transaction log, simple reporting.</p>
+            </div>
+          </article>
+
+          <article class="project card fade-up">
+            <img src="https://via.placeholder.com/320x180.png?text=Project+3" alt="Project 3">
+            <div>
+              <h3>Fighting Game (JavaScript)</h3>
+              <p>Prototype fighting game with pixel-art sprites and attack animations. Built to practice sprite animation and game loop logic.</p>
+            </div>
+          </article>
+
+          <article class="project card fade-up">
+            <img src="https://via.placeholder.com/320x180.png?text=Project+4" alt="Project 4">
+            <div>
+              <h3>Personal Website</h3>
+              <p>This responsive portfolio template (that you're viewing) — lightweight, single-file, easy to customize.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="card fade-up">
+        <h2>Skills</h2>
+        <div class="skills" style="margin-top:12px">
+          <div class="skill">HTML</div>
+          <div class="skill">CSS</div>
+          <div class="skill">JavaScript</div>
+          <div class="skill">Flutter</div>
+          <div class="skill">C# (WinForms)</div>
+          <div class="skill">Firebase</div>
+          <div class="skill">UX Design</div>
+        </div>
+      </section>
+
+      <section id="contact" class="fade-up">
+        <h2>Contact</h2>
+        <div class="contact-grid">
+          <div class="card">
+            <h3 style="margin-top:0">Get in touch</h3>
+            <p style="color:var(--muted);margin-bottom:16px">Want to collaborate or ask about a project? Send me a message and I’ll reply soon.</p>
+            <form action="mailto:you@example.com" method="POST" enctype="text/plain">
+              <label for="name">Name</label>
+              <input id="name" name="name" placeholder="Your name">
+
+              <label for="email">Email</label>
+              <input id="email" name="email" placeholder="you@example.com">
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell me about your project..."></textarea>
+
+              <div style="margin-top:12px;display:flex;gap:8px">
+                <button type="submit" class="btn btn-primary">Send</button>
+                <button type="reset" class="btn btn-ghost">Reset</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="card" style="display:flex;flex-direction:column;gap:10px;align-items:flex-start;justify-content:center">
+            <div>
+              <strong>Location</strong>
+              <div style="color:var(--muted);font-size:14px">Bacolod City, Philippines</div>
+            </div>
+
+            <div>
+              <strong>Email</strong>
+              <div style="color:var(--muted);font-size:14px">you@example.com</div>
+            </div>
+
+            <div>
+              <strong>Phone</strong>
+              <div style="color:var(--muted);font-size:14px">+63 9XX XXX XXXX</div>
+            </div>
+
+            <div style="margin-top:6px;color:var(--muted);font-size:13px">You can also reach me on <a href="#" style="color:var(--muted);text-decoration:underline">LinkedIn</a> or <a href="#" style="color:var(--muted);text-decoration:underline">GitHub</a>.</div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        © <span id="year"></span> Rico Cania — Built with ❤️
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // Fill current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple: optional improvements you can add
+    // - Smooth scroll for anchor links
+    // - Replace images and content with your real data
+    // - Hook contact form to a backend (Formspree, Netlify, your server) instead of mailto
+
+    // Smooth scroll (modern browsers)
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const target = document.querySelector(a.getAttribute('href'));
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      })
+    })
+  </script>
+</body>
+</html>
